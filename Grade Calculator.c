@@ -1,10 +1,19 @@
 #include<stdio.h>
 main()
 {
-	int marks;
-	printf("Enter your marks obtained :");
+	int marks,mm;
+	//use mm for maximum maxrks
+	printf("enter maximum marks:");
+	scanf("%d",&mm);
+	printf("\nEnter your marks obtained :");
 	scanf("%d", &marks);
-	if(marks<40)
+	//update marks by conerting maximum maxrks in 100 ie-finding percent
+	marks=marks*100/mm;
+	if(marks>100)
+	{
+		printf("invalid marks");
+	}
+	else if(marks<40)
 	{
 	printf("you get 'Grade F' ");	
 	}
@@ -20,13 +29,8 @@ main()
 	{
 	printf("you get 'Grade B' ");	
 	}
-	else if(marks>=85 && marks<=100)
-	{
-	printf("you get 'Grade A' ");	
-	}
 	else
-	{
-		printf("Enter valid marks!!");
-	}
+	printf("you get 'Grade A' ");	
+	
 	return 0;
 }
